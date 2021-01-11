@@ -4,11 +4,11 @@ namespace App;
 
 abstract class GildedRose
 {
-    public $name;
+    public string $name;
 
-    public $quality;
+    public int $quality;
 
-    public $sellIn;
+    public int $sellIn;
 
     public function __construct(string $name, int $quality, int $sellIn)
     {
@@ -17,7 +17,7 @@ abstract class GildedRose
         $this->sellIn = $sellIn;
     }
 
-    public static function of($name, $quality, $sellIn) {
+    public static function of(string $name, int $quality, int $sellIn): self {
 
         if ($name === 'Aged Brie') {
             return new Brie($name, $quality, $sellIn);
