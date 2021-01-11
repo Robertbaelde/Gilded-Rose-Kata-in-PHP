@@ -17,8 +17,8 @@ abstract class GildedRose
         $this->sellIn = $sellIn;
     }
 
-    public static function of(string $name, int $quality, int $sellIn): self {
-
+    public static function of(string $name, int $quality, int $sellIn): self
+    {
         if ($name === 'Aged Brie') {
             return new Brie($name, $quality, $sellIn);
         }
@@ -29,6 +29,10 @@ abstract class GildedRose
 
         if (strpos($name, 'Backstage passes') !== false) {
             return new BackstagePass($name, $quality, $sellIn);
+        }
+
+        if ($name === 'Conjured Mana Cake') {
+            return new Conjured($name, $quality, $sellIn);
         }
 
         return new Normal($name, $quality, $sellIn);
