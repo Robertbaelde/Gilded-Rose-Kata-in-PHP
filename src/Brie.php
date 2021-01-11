@@ -9,8 +9,8 @@ class Brie extends GildedRose
     public function tick()
     {
         $this->sellIn--;
-        $qualityDecrease = $this->sellIn < 0 ? 2 : 1;
+        $qualityIncrease = $this->sellIn < 0 ? 2 : 1;
 
-        $this->quality = min($this->quality + $qualityDecrease, 50);
+        $this->quality = min($this->quality + $qualityIncrease, 50);
     }
 }
