@@ -18,6 +18,9 @@ class GildedRose
     }
 
     public static function of($name, $quality, $sellIn) {
+        if ($name === 'normal') {
+            return new NormalItem($name, $quality, $sellIn);
+        }
         return new static($name, $quality, $sellIn);
     }
 
