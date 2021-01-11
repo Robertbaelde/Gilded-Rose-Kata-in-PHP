@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App;
 
 
-class Conjured extends GildedRose
+final class Conjured extends Product
 {
     public function tick()
     {

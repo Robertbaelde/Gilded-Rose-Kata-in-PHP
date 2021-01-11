@@ -1,6 +1,6 @@
 <?php
 
-use App\Item;
+use App\Product;
 use App\GildedRose;
 
 /*

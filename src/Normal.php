@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App;
 
 
-class Normal extends GildedRose
+final class Normal extends Product
 {
     public function tick()
     {

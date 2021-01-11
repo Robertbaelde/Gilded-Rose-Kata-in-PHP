@@ -2,22 +2,9 @@
 
 namespace App;
 
-abstract class GildedRose
+final class GildedRose
 {
-    public string $name;
-
-    public int $quality;
-
-    public int $sellIn;
-
-    public function __construct(string $name, int $quality, int $sellIn)
-    {
-        $this->name = $name;
-        $this->quality = $quality;
-        $this->sellIn = $sellIn;
-    }
-
-    public static function of(string $name, int $quality, int $sellIn): self
+    public static function of(string $name, int $quality, int $sellIn): GildedRoseItem
     {
         if ($name === 'Aged Brie') {
             return new Brie($name, $quality, $sellIn);
@@ -37,6 +24,4 @@ abstract class GildedRose
 
         return new Normal($name, $quality, $sellIn);
     }
-
-    abstract public function tick();
 }

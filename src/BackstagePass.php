@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App;
 
 
-class BackstagePass extends GildedRose
+final class BackstagePass extends Product
 {
     public function tick()
     {

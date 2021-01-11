@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App;
 
 
-class Sulfuras extends GildedRose
+final class Sulfuras extends Product
 {
     public function tick()
     {
