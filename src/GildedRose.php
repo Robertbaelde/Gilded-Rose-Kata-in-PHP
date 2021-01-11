@@ -22,8 +22,12 @@ class GildedRose
             return new Normal($name, $quality, $sellIn);
         }
 
-        if($name === 'Aged Brie') {
+        if ($name === 'Aged Brie') {
             return new Brie($name, $quality, $sellIn);
+        }
+
+        if (strpos($name, 'Backstage passes') !== false) {
+            return new BackstagePass($name, $quality, $sellIn);
         }
 
         return new static($name, $quality, $sellIn);
