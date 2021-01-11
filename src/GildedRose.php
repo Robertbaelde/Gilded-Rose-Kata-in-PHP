@@ -10,7 +10,7 @@ class GildedRose
 
     public $sellIn;
 
-    public function __construct($name, $quality, $sellIn)
+    public function __construct(string $name, int $quality, int $sellIn)
     {
         $this->name = $name;
         $this->quality = $quality;
@@ -19,14 +19,19 @@ class GildedRose
 
     public static function of($name, $quality, $sellIn) {
         if ($name === 'normal') {
-            return new NormalItem($name, $quality, $sellIn);
+            return new Normal($name, $quality, $sellIn);
         }
+
+        if($name === 'Aged Brie') {
+            return new Brie($name, $quality, $sellIn);
+        }
+
         return new static($name, $quality, $sellIn);
     }
 
     public function tick()
     {
-        if ($this->name != 'Aged Brie' and $this->name != 'Backstage passes to a TAFKAL80ETC concert') {
+        if ($this->name != 'Aged Brie' && $this->name != 'Backstage passes to a TAFKAL80ETC concert') {
             if ($this->quality > 0) {
                 if ($this->name != 'Sulfuras, Hand of Ragnaros') {
                     $this->quality = $this->quality - 1;
